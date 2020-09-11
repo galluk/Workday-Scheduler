@@ -16,9 +16,9 @@ class ScheduleItem {
 // }
 
 function checkCurrentDay(currentDate) {
-    var lastSavedDate = new Date(localStorage.getItem(DATE_STORAGE_NAME));
+    var lastSavedDate = moment(JSON.parse(localStorage.getItem(DATE_STORAGE_NAME)));
 
-    if (!currentDate.isSame(lastSavedDate), 'day') {
+    if (!lastSavedDate.isSame(currentDate, "day")) {
         // clear the storage
         localStorage.removeItem(ITEMS_STORAGE_NAME);
     }
@@ -93,7 +93,7 @@ function saveItem(hour) {
 
     // and save
     localStorage.setItem(ITEMS_STORAGE_NAME, JSON.stringify(scheduleItems));
-    localStorage.setItem(DATE_STORAGE_NAME, JSON.stringify(new Date()));
+    localStorage.setItem(DATE_STORAGE_NAME, JSON.stringify(moment()));
 } // saveItem
 
 // get items from local storage and load them into the display
