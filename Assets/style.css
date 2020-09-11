@@ -58,10 +58,6 @@ textarea{
   color: white;
 }
 
-.fa-save {
-  /* vertical-align: bottom; */
-}
-
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
