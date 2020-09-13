@@ -1,7 +1,6 @@
 const ITEMS_STORAGE_NAME = "scheduleItems";
 const DATE_STORAGE_NAME = "scheduleDate";
-
-var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]; // values to compare against the Hour of current moment
+const NAME_HOUR_MODIFIER = 8; // row 1 is for hour 9 for first iteration. Change as necessary.
 
 class ScheduleItem {
     constructor(hour, text) {
@@ -10,7 +9,9 @@ class ScheduleItem {
     }
 }
 
+var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]; // values to compare against the Hour of current moment
 var scheduleItems = []; // an array of ScheduleItem class items
+var txtContent = ""; // the content of the currently selected text-area control
 
 // see if the current day is the same as the day last saves were made and clear the storage items if it isn't
 function checkCurrentDay(currentDate) {
@@ -39,8 +40,8 @@ function updateTimeslotDisplay() {
     // check each timeslot against the current time
     for (var i = 0; i < timeArray.length; i++) {
         // get the ID of the corresponding control
-        var nameQuery = "[name='" + "item-text" + (i + 1) + "']";
-        
+        var nameQuery = "[name='" + "item-text" + (i + NAME_HOUR_MODIFIER + 1) + "']";
+
         // set the number of hours for this array item
         hourCheck.hours(timeArray[i]);
 
@@ -59,10 +60,10 @@ function updateTimeslotDisplay() {
     }
 } // updateTimeslotDisplay
 
+// save the text contents to local storage
 function saveItem(hour) {
-    // get the text associated with this hour
-    // text items are labeled based on row number, not hour so subtract 8 (e.g. hour 9 gives row 1)
-    var nameQuery = "[name='" + "item-text" + (hour - 8) + "']";
+    // get the text associated with this hour (text items are labeled based on hour)
+    var nameQuery = "[name='" + "item-text" + hour + "']";
     // get the content for the row clicked on
     var itemText = $(nameQuery).val().trim();
 
@@ -86,7 +87,7 @@ function saveItem(hour) {
 
     // and save the items
     localStorage.setItem(ITEMS_STORAGE_NAME, JSON.stringify(scheduleItems));
-    // and timestamp now as when the last save occured
+    // and save moment now as when the last save occured
     localStorage.setItem(DATE_STORAGE_NAME, JSON.stringify(moment()));
 } // saveItem
 
@@ -101,8 +102,8 @@ function loadItems() {
     if (scheduleItems.length > 0) {
         // fill the hour content for any that exist
         for (var i = 0; i < scheduleItems.length; i++) {
-            // text items are labeled based on row number, not hour so subtract 8 (e.g. hour 9 gives row 1)
-            var nameQuery = "[name='" + "item-text" + (scheduleItems[i].hour - 8) + "']";
+            // text items are labeled based on hour
+            var nameQuery = "[name='" + "item-text" + scheduleItems[i].hour + "']";
             var itemText = $(nameQuery).val(scheduleItems[i].content);
         }
     }
@@ -119,10 +120,13 @@ initialise();
 // event handler for save button
 $(".saveBtn").on("click", function () {
     saveItem($(this).val());
+    // change state of button back to disabled
+    $(this).prop('disabled', true);
 });
 
-// event handler for text changes
-// $(".desc-text").on("change", function () {
-//     saveItem($(this).val());
-// });
-
+// event handler change for desc text area to change state of save button so user can save
+$(".desc-text").on("keydown", function () {
+    // 9 chars in item-text (name of text area control) so slice it off to get the value of the button for this row
+    var btnQuery = "[value='" + $(this).attr("name").slice(9) + "']";
+    $(btnQuery).prop('disabled', false);
+});

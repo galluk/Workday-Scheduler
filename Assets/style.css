@@ -1,10 +1,12 @@
+/** @format */
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -23,8 +25,8 @@ textarea{
 }
 
 .time-para {
-   text-align: right;
-   font-weight: bold;
+  text-align: right;
+  font-weight: bold;
 }
 
 .description {
@@ -36,17 +38,15 @@ textarea{
   font-weight: bold;
 }
 
-.time-block{
+.time-block {
   text-align: center;
   border-radius: 15px;
 }
 
 .row {
   white-space: pre-wrap;
-  height: 99%;
-  /* width: 100%; */
+  height: 98%;
   border-top: 1px solid white;
-  /* border-right: 1px solid black; */
 }
 
 .button-col {
@@ -75,18 +75,20 @@ textarea{
 }
 
 .saveBtn {
-  /* border-left: 5px solid black;
-  border-right: 5px solid black; */
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: #06aed5;
   color: white;
   font-size: 20px;
-  height: 99%;
+  height: 98%;
   width: 100%;
+}
+
+.saveBtn[disabled]:hover {
+  color: white;
 }
 
 .saveBtn i:hover {
   font-size: 25px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
