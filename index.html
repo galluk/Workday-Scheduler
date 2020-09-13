@@ -6,13 +6,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Added a link to Bootstrap-->
+    <!-- link to Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- Added a link to font awesome-->
+    <!-- link to font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!-- Added a link to other fonts-->
+    <!-- link to other fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <!-- Added a link to external stylesheet-->
+    <!-- link to external stylesheet-->
     <link rel="stylesheet" href="Assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -20,62 +20,65 @@
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="lead">A simple calendar app for scheduling your work day.</p>
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
       <!-- Time blocks go here. Office hours of 9-5 so 9 rows -->
-      <!-- each row has a time, text content and save column. Row id/name/value matches the hour associated with the row -->
+      <!-- Each row has a time, text content and save column. Row id/name/value matches the hour associated with the row -->
       <div class="row" id="row9">
-        <div class="col-lg-1 hour"><br><p class="time-para">9AM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text9" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="9" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">9AM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text9" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="9" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row10">
-        <div class="col-lg-1 hour"><br><p class="time-para">10AM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text10" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="10" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">10AM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text10" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="10" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row11">
-        <div class="col-lg-1 hour"><br><p class="time-para">11AM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text11"  class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="11" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">11AM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text11"  class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="11" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row12">
-        <div class="col-lg-1 hour"><br><p class="time-para">12PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text12" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="12" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">12PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text12" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="12" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row13">
-        <div class="col-lg-1 hour"><br><p class="time-para">1PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text13" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="13" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">1PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text13" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="13" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row14">
-        <div class="col-lg-1 hour"><br><p class="time-para">2PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text14" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="14" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">2PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text14" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="14" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row15">
-        <div class="col-lg-1 hour"><br><p class="time-para">3PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text15" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="15" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">3PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text15" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="15" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row16">
-        <div class="col-lg-1 hour"><br><p class="time-para">4PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text16" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="16" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">4PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text16" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="16" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <div class="row" id="row17">
-        <div class="col-lg-1 hour"><br><p class="time-para">5PM</p></div>
-        <div class="col-lg-10 description"><textarea name="item-text17" class="desc-text" rows="4"></textarea></div>
-        <div class="col-lg-1 button-col"><button class="btn saveBtn" value="17" disabled><i class="fas fa-save"></i></button></div>
+        <div class="col-md-1 hour"><br><p class="time-para">5PM</p></div>
+        <div class="col-md-10 description"><textarea name="item-text17" class="desc-text" rows="4"></textarea></div>
+        <div class="col-md-1 button-col"><button class="btn saveBtn" value="17" disabled><i class="fas fa-save"></i></button></div>
       </div>
       <!-- end of container -->
     </div>
 
+    <!-- link to jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- link to Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- link to external local script -->
     <script src="Assets/main.js"></script>
   </body>
 </html>

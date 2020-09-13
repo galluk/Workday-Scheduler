@@ -10,7 +10,7 @@ class ScheduleItem {
 }
 
 var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]; // values to compare against the Hour of current moment
-var scheduleItems = []; // an array of ScheduleItem class items
+var scheduleItems = []; // an array of ScheduleItem class items. Loaded on page initialise and persists.
 var txtContent = ""; // the content of the currently selected text-area control
 
 // see if the current day is the same as the day last saves were made and clear the storage items if it isn't
@@ -55,7 +55,7 @@ function updateTimeslotDisplay() {
         }
         else {
             // apply present formatting
-            $(txtCnameQueryontrolId).addClass("present");
+            $(nameQuery).addClass("present");
         }
     }
 } // updateTimeslotDisplay
@@ -124,9 +124,27 @@ $(".saveBtn").on("click", function () {
     $(this).prop('disabled', true);
 });
 
-// event handler change for desc text area to change state of save button so user can save
+// event handler for change of text area to change state of save button so user can save
 $(".desc-text").on("keydown", function () {
     // 9 chars in item-text (name of text area control) so slice it off to get the value of the button for this row
     var btnQuery = "[value='" + $(this).attr("name").slice(9) + "']";
     $(btnQuery).prop('disabled', false);
+});
+
+// event handler for change of focus of text area
+$(".desc-text").on("blur", function () {
+    if (scheduleItems.length > 0) {
+        // 9 chars in item-text (name of text area control) so slice it off to get the value of the button for this row
+        var btnHourVal = $(this).attr("name").slice(9);
+
+        // get the index of the array this applies to
+        var thisItem = scheduleItems.find(function (item) { return item.hour === btnHourVal });
+        if (thisItem) {
+            // if the content is the same as what is in memory disable the save
+            if (thisItem.content === $(this).val().trim()) {
+                var btnQuery = "[value='" + btnHourVal + "']";
+                $(btnQuery).prop('disabled', true);
+            }
+        }
+    }
 });
