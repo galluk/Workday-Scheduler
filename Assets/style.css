@@ -92,3 +92,39 @@ textarea {
   font-size: 25px;
   transition: all 0.3s ease-in-out;
 }
+
+/******************************* media queries **************************/
+/* Width at 460px and below */
+@media screen and (max-width: 460px) {
+  textarea {
+    height: 4em;
+  }
+
+  .jumbotron {
+    margin-bottom: 8px;
+    padding: 8px;
+  }
+  
+    .display-3 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .row {
+    margin-bottom: 2px;
+  }
+
+  .hour {
+    height: 30px;
+  }
+
+  .time-para {
+    text-align: center;
+    margin: -10px 0px 0px 0px;
+  }
+
+  .saveBtn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+}
