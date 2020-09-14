@@ -27,7 +27,7 @@ The scheduler only shows the current day, with any data from the previous day lo
 GNU General Public License v3.0
 
 ### Link to the App
-<a href="https://galluk.github.io/Workday-Scheduler/index.html">The Workday Scheduler</a><hr>
+<a href="https://galluk.github.io/Workday-Scheduler/index.html">The Workday Scheduler</a>
 <hr>
 
 ## Authors
